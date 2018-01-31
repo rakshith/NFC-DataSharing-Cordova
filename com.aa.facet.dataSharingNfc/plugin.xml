@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+        xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.nfc.dataSharingNfc"
+        version="1.0.0">
+
+    <name>Data sharing NFC</name>
+    <description>This plugin used for sharing of data between two devices with using Android beam</description>
+
+    <js-module src="www/DataSharingNfcPlugin.js" name="DataSharingNfcPlugin">
+        <clobbers target="DataSharingNfcPlugin" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DataSharingNfcPlugin">
+                <param name="android-package" value="com.aa.facet.dataSharingNfc.DataSharingNfcPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/DataSharingNfcPlugin.java"
+                     target-dir="src/com/nfc/dataSharingNfc"/>
+        <source-file src="src/android/NfcUiDataHandler.java"
+                     target-dir="src/com/nfc/dataSharingNfc"/>
+        <source-file src="src/android/NdefReaderTask.java"
+                     target-dir="src/com/nfc/dataSharingNfc"/>
+        <source-file src="src/android/Util.java"
+                     target-dir="src/com/nfc/dataSharingNfc"/>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.NFC"/>
+            <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+        </config-file>
+
+    </platform>
+
+
+
+
+</plugin>

@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "name": "com.nfc.dataSharingNfc",
+  "cordova_name": "Data sharing NFC",
+  "description": "This plugin used for sharing of data between two devices with using Android beam",
+  "license": "GNU public license",
+  "keywords": [
+    "cordova","nfc"
+  ],
+  "engines": []
+}
